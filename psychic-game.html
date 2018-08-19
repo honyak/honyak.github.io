@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>The Psychic Game</h1>
+    <p>Guess what letter I'm thinking of</p>
+    <p>Wins: </p><span id="wins-count"></span>
+    <p>Losses: </p><span id="losses-count"></span>
+    <p>Guesses Left: </p><span id="guesses-left"></span>
+    <p>Your Guesses so far: </p><span id="guesses"></span>
+
+    <script type="text/javascript">
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var winsCount = 0, lossesCount = 0, guessesLeft = 10;
+    var userChoice;
+    var usedLetters = [];
+    var winsText = document.getElementById("wins-count");
+    var lossesText = document.getElementById("losses-count");
+    var guessesLeftText = document.getElementById("guesses-left");
+    var guessesText = document.getElementById("guesses");
+    
+function computerLetter () {
+      computerGuess = letters[Math.floor(Math.random() * letters.length)];
+      console.log(computerGuess);
+
+}
+    computerLetter();
+
+    document.onkeyup = function (event) {
+        
+        var input = event.key;
+        userChoice = input.toUpperCase();
+        if (letters.indexOf(userChoice) >= 0){
+        if (userChoice == computerGuess){
+            winsCount++;
+            usedLetters = [];
+            guessesLeft = 10;
+            computerLetter();
+        }
+        
+        if (userChoice != computerGuess) {
+            guessesLeft--;
+        }
+    
+        if (guessesLeft == 0) {
+            lossesCount++;
+            usedLetters = [];
+            guessesLeft = 10;
+            computerLetter();
+        }
+
+        if (usedLetters.indexOf(userChoice) >= 0) {
+
+        }
+        else {
+            usedLetters.push(userChoice);
+            document.getElementById("guesses").innterHTML = usedLetters;
+
+        }
+    }
+    else {
+        alert("Please press a letter key to play.");
+    }
+        winsText.textContent = winsCount;
+        lossesText.textContent = lossesCount;
+        guessesText.textContent = usedLetters;
+        guessesLeftText.textContent = guessesLeft;
+    }
+    
+    
+    
+    </script>
+</body>
+</html>
