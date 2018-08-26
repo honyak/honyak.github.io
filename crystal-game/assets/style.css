@@ -1,0 +1,74 @@
+/*font-family: 'Alfa Slab One', cursive;
+font-family: 'Ek Mukta', sans-serif;*/
+
+/* Backgrounds */
+body {
+	background-image: url("img//background.jpg");
+}
+
+.jumbotron {
+    background-color:#F7E7CF;
+    width:40%;
+}
+.jumbotron h1{
+background-color:#BE7538;
+
+}
+
+#gameSection, #scoreSection {
+    width:40%;
+	background-color: #ffffff;
+	margin-left: 10px;  
+}
+#numberSection{
+    float:left;
+}
+#scoreSection{
+    /* border-left:1px solid black; */
+    height:100%;
+    margin-left:20px;
+    float:left;
+    
+}
+
+/*FOR TESTING*/
+/*#numberSection, #totalPoints {
+	background-color: orange;
+}*/
+
+#buttonSection {
+
+    /*background-color: yellow;*/
+    overflow:auto;
+    clear:both;
+	padding: 0px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+/* Fonts */
+h1, h2, h3 {
+	font-family: 'Helvetica Neue', cursive;
+}
+
+p {
+	font-family: 'Helvetica Neue', sans-serif;
+}
+
+.numberBox {
+	font-size: 100px;
+	margin: 0px;
+}
+#totalPoints{
+    background-color:#52A096;
+    color:#fff;
+}
+/* images for buttons */
+.gem-icons {
+	display: inline-block;
+  	max-width: 100px;
+  	max-height: 100px;
+  	width: auto;
+  	height: auto;
+  	margin:10px;
+}
