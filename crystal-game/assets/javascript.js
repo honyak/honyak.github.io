@@ -74,7 +74,6 @@ $(document).ready(function() {
 		alert(x);
 	} 
 
-
 	randNumber(rand); 
 	randomCrystal(crystals);
 	crystalNumbers(crystalNumbers);
